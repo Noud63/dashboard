@@ -14,7 +14,8 @@ import salesRoutes from './routes/sales.js'
 // import User from "./models/User.js"
 // import Product from "./models/Product.js"
 // import ProductStat from "./models/ProductStat.js"
-// import { dataUser, dataProduct, dataProductStat } from "./data/index.js"
+// import Transaction from "./models/Transaction.js"
+// import { dataUser, dataProduct, dataProductStat, dataTransaction } from "./data/index.js"
 
 
 /*CONFIGURATION*/
@@ -24,7 +25,7 @@ const app = express()
 app.use(express.json())
 app.use(helmet())
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }))
-app.use(morgan("common"))
+// app.use(morgan("common"))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors())
@@ -49,7 +50,7 @@ mongoose.connect(process.env.REACT_APP_MONGO_URI, {
         // AffiliateStat.insertMany(dataAffiliateStat);
         // OverallStat.insertMany(dataOverallStat);
         // Product.insertMany(dataProduct);
-        //  ProductStat.insertMany(dataProductStat);
+        // ProductStat.insertMany(dataProductStat);
         // Transaction.insertMany(dataTransaction);
         // User.insertMany(dataUser);
 }).catch((error) => console.log(`${error} did not connect`));

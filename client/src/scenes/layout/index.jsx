@@ -19,7 +19,7 @@ const Layout = () => {
       <Sidebar 
           user={data || {}}
           isNonMobile={isNonMobile} 
-          drawerWidth="250px" 
+          drawerWidth="265px" 
           isSidebarOpen={isSidebarOpen} 
           setIsSidebarOpen={setIsSidebarOpen}
       />
