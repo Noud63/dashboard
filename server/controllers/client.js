@@ -2,6 +2,7 @@ import Product from "../models/Product.js"
 import ProductStat from "../models/ProductStat.js"
 import User from "../models/User.js"
 import Transaction from "../models/Transaction.js"
+import getCountryISO3 from 'country-iso-2-to-3'
 
 const getProducts = async (req, res) => {
     try {
@@ -57,7 +58,7 @@ const getTransactions = async (req, res) => {
             .limit(pageSize);
 
         const total = await Transaction.countDocuments({
-           userId: { $regex: search, $options: "i" },
+            userId: { $regex: search, $options: "i" },
         });
 
         res.status(200).json({
@@ -69,5 +70,31 @@ const getTransactions = async (req, res) => {
     }
 };
 
+const getGeography = async (req, res) => {
+    try {
+        const users = await User.find()
 
-export { getProducts, getCustomers, getTransactions }
+        const mappedLocations = users.reduce((acc, { country }) => {
+            const countryISO3 = getCountryISO3(country)
+            if (!acc[countryISO3]) {
+                acc[countryISO3] = 0
+            }
+            acc[countryISO3]++
+            return acc
+        }, {})
+
+const formattedLocation = Object.entries(mappedLocations).map(([country, count])=>{
+                     return { id: country, value: count}
+}
+)
+// console.log(formattedLocation)
+res.status(200).json(formattedLocation)
+
+    } catch (error) {
+        res.status(404).json({ message: error.message })
+    }
+}
+
+
+
+export { getProducts, getCustomers, getTransactions, getGeography }
