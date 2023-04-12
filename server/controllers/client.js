@@ -73,21 +73,22 @@ const getTransactions = async (req, res) => {
 const getGeography = async (req, res) => {
     try {
         const users = await User.find()
-
         const mappedLocations = users.reduce((acc, { country }) => {
-            const countryISO3 = getCountryISO3(country)
+            const countryISO3 = getCountryISO3(country) /* all the countries in three letter codes */
+            
             if (!acc[countryISO3]) {
                 acc[countryISO3] = 0
             }
             acc[countryISO3]++
+            console.log(acc)
             return acc
         }, {})
-
-const formattedLocation = Object.entries(mappedLocations).map(([country, count])=>{
+        
+        const formattedLocation = Object.entries(mappedLocations).map(([country, count]) => {   // Object entries = [ ['IDN', 35], [ 'CHN', 54 ], .....]
                      return { id: country, value: count}
 }
 )
-// console.log(formattedLocation)
+console.log(formattedLocation)
 res.status(200).json(formattedLocation)
 
     } catch (error) {

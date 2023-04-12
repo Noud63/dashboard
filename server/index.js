@@ -10,12 +10,13 @@ import generalRoutes from './routes/general.js'
 import managementRoutes from './routes/management.js'
 import salesRoutes from './routes/sales.js'
 
-//Data imports
+// Data imports
 // import User from "./models/User.js"
 // import Product from "./models/Product.js"
 // import ProductStat from "./models/ProductStat.js"
 // import Transaction from "./models/Transaction.js"
-// import { dataUser, dataProduct, dataProductStat, dataTransaction } from "./data/data2.js"
+// import OverallStat from './models/OverallStat.js'
+// import { dataUser, dataProduct, dataProductStat, dataTransaction, dataOverallStat } from "./data/data2.js"
 
 
 /*CONFIGURATION*/
@@ -47,11 +48,13 @@ mongoose.connect(process.env.REACT_APP_MONGO_URI, {
         app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
         /* ONLY ADD DATA ONE TIME */
+        // OverallStat.insertMany(dataOverallStat)
         // AffiliateStat.insertMany(dataAffiliateStat);
         // OverallStat.insertMany(dataOverallStat);
         // Product.insertMany(dataProduct);
         // ProductStat.insertMany(dataProductStat);
         // Transaction.insertMany(dataTransaction);
         // User.insertMany(dataUser);
+
 }).catch((error) => console.log(`${error} did not connect`));
 
