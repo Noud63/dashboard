@@ -2,7 +2,7 @@
 
 Dasboard is a MERN Stack application<br>
 
-Front-end: React, Redux-Toolkit, Redux-toolkit-Query, <a href="https://mui.com">MaterialUI</a>, NIVO<br>
+Front-end: React, Redux-Toolkit, Redux-toolkit-Query, <a href="https://mui.com">MaterialUI</a>, <a href="https://nivo.rocks">NIVO</a><br>
 Back-end : Express, Nodejs, MongoDB, Mongoose<br><br>
 
 ![dashboard](https://user-images.githubusercontent.com/38325801/229120603-6368d2af-56fa-4c54-af0d-44a74adee4da.png)<br><br>
