@@ -88,7 +88,7 @@ const getGeography = async (req, res) => {
                      return { id: country, value: count}
 }
 )
-console.log(formattedLocation)
+// console.log(formattedLocation)
 res.status(200).json(formattedLocation)
 
     } catch (error) {
