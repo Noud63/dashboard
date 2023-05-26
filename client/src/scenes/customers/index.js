@@ -3,6 +3,7 @@ import { Box, useTheme } from "@mui/material"
 import { useGetCustomersQuery } from 'state/api'
 import Header from "components/Header"
 import { DataGrid } from '@mui/x-data-grid'
+import CustomColumnMenu from "components/DataGridCustomColumnMenu"
 
 const Customers = () => {
 
@@ -52,7 +53,7 @@ const Customers = () => {
 
     return (
         <Box m="1.5rem 2.5rem">
-            <Header title="Customers" subTitle="List of Customers" />
+            <Header title="CUSTOMERS" subTitle="List of Customers" />
             <Box
                 mt="40px"
                 height="73vh"
@@ -77,7 +78,15 @@ const Customers = () => {
                     }
                 }}
             >
-                <DataGrid loading={isLoading || !data} getRowId={(row) => row._id} rows={data || []} columns={columns} />
+                <DataGrid 
+                loading={isLoading || !data} 
+                getRowId={(row) => row._id} 
+                rows={data || []} 
+                columns={columns} 
+                components={{
+                    ColumnMenu: CustomColumnMenu,
+                }}
+                />
             </Box>
         </Box>
     )
