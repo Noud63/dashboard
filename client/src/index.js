@@ -10,13 +10,15 @@ import { api } from 'state/api'
 
 const store = configureStore({
   reducer: {
-    global: globalReducer,
-    [api.reducerPath]: api.reducer
+    global: globalReducer,  // comes from state/index.js => state.global 
+    [api.reducerPath]: api.reducer // comes from state/api.js => state.adminApi 
   },
   middleware: (getDefault) => getDefault().concat(api.middleware)
 })
 
 setupListeners(store.dispatch)
+
+// console.log(store.getState().adminApi)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

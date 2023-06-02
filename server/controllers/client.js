@@ -80,7 +80,7 @@ const getGeography = async (req, res) => {
                 acc[countryISO3] = 0
             }
             acc[countryISO3]++
-            console.log(acc)
+        
             return acc
         }, {})
         

@@ -22,8 +22,6 @@ const Transactions = () => {
         search,
     });
 
-console.log(data && data.total)
-
     const columns = [
         {
             field: "_id",
