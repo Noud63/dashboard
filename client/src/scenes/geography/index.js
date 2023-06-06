@@ -13,10 +13,14 @@ const { data } = useGetGeographyQuery()
   return (
     <Box m="1.5rem 2.5rem">
 <Header title="GEOGRAPHY" sunTitle="Find where your users are located" />
-<Box mt="40px" height="75vh" border={`1px solid ${theme.palette.secondary[200]}`} borderRadius="4px">
+          <Box mt="40px" 
+          height="75vh" 
+          border={`1px solid ${theme.palette.primary[300]}`} 
+          borderRadius="4px" 
+          boxShadow="0px 0px 8px 4px rgb(0, 0, 0, 0.3)">
               {data ? (<ResponsiveChoropleth
                   data={data}
-                  colors="YlOrRd"
+                  colors="blues"
                   theme={{
                     axis: {
                         domain: {

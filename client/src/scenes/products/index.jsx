@@ -22,7 +22,9 @@ const Product = ({ _id, name, description, price, rating, category, supply, stat
         <Card sx={{
             backgroundImage: "none",
             backgroundColor: theme.palette.background.alt,
-            borderRadius: "0.55rem"
+            borderRadius: "0.55rem",
+            boxShadow:"0px 0px 8px 4px rgb(0, 0, 0, 0.3)",
+            width: "100%"
         }}
         >
             <CardContent>

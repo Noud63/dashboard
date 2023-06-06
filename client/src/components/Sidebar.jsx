@@ -110,9 +110,10 @@ const Sidebar = ({ drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobile, us
             {isSidebarOpen && (
                 <Drawer
                     open={isSidebarOpen}
-                    onClose={() => setIsSidebarOpen(false)}
+                    
                     variant="persistent"
                     anchor="left"
+                    
                     sx={{
                         width: drawerWidth,
                         "& .MuiDrawer-paper": {
@@ -120,7 +121,8 @@ const Sidebar = ({ drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobile, us
                             backgroundColor: theme.palette.background.alt,
                             boxSizing: "border-box",
                             borderWidth: isNonMobile ? 0 : "2px",
-                            width: drawerWidth
+                            width: drawerWidth,
+                            boxShadow:"0px 0px 8px 4px rgb(0, 0, 0, 0.3)"
                         }
                     }}
                 >
@@ -178,7 +180,7 @@ const Sidebar = ({ drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobile, us
                             })}
                         </List>
                     </Box>
-                    <Box position="absolute" bottom="2rem" >
+                    <Box mb="2rem" >
                         <Divider />
                         <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
                             <Box component="img" alt="profile" src={ProfileImage} height="40px" width="40px" borderRadius="50%" sx={{ objectFit: "cover" }} />

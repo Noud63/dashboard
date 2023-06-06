@@ -57,6 +57,7 @@ const Customers = () => {
             <Box
                 mt="40px"
                 height="73vh"
+                boxShadow="0px 0px 8px 4px rgb(0, 0, 0, 0.3)"
                 sx={{
                     "& .MuiDataGrid-root": { border: "none" },
                     "& .MuiDataGrid-cell": { borderBottom: "none" },

@@ -17,6 +17,7 @@ const StatBox = ( {title, value, increase, icon, description} ) => {
     justifyContent="space-between"
     p="1.25rem 1rem"
     flex="1 1 100%"
+    boxShadow="0px 0px 8px 4px rgb(0, 0, 0, 0.3)"
     backgroundColor={theme.palette.background.alt}
     borderRadius="0.55rem"
     >

@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { Box, useTheme } from "@mui/material";
+import { Box, useTheme, TextField } from "@mui/material";
 import Header from "components/Header";
 import { ResponsiveLine } from "@nivo/line";
 import { useGetSalesQuery } from "state/api";
@@ -27,7 +27,7 @@ const Daily = () => {
             data: [],
         };
         
-    console.log(data)
+
         dailyData.forEach(({ date, totalSales, totalUnits }) => {
             const dateFormatted = new Date(date);
             if (dateFormatted >= startDate && dateFormatted <= endDate) {
@@ -48,18 +48,20 @@ const Daily = () => {
         return [formattedData];
     }, [data, startDate, endDate]); // eslint-disable-line react-hooks/exhaustive-deps
 
+
     return (
         <Box m="1.5rem 2.5rem">
-            <Header title="DAILY SALES" subtitle="Chart of daily sales" />
+            <Header title="DAILY SALES" subTitle="Chart of daily sales" />
             <Box height="75vh">
                 <Box display="flex" justifyContent="flex-end">
-                    <Box>
+                    <Box >
                         <DatePicker
                             selected={startDate}
                             onChange={(date) => setStartDate(date)}
                             selectsStart
                             startDate={startDate}
                             endDate={endDate}
+                            sx={{ color:"red" }}
                         />
                     </Box>
                     <Box>

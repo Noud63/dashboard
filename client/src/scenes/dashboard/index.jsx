@@ -101,6 +101,7 @@ const Dashboard = () => {
           gridColumn="span 8"
           gridRow="span 2"
           backgroundColor={theme.palette.background.alt}
+          boxShadow="0px 0px 8px 4px rgb(0, 0, 0, 0.3)"
           p="1rem"
           borderRadius="0.55rem"
         >
@@ -157,6 +158,7 @@ const Dashboard = () => {
             "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
               color: `${theme.palette.secondary[200]} !important`,
             },
+            boxShadow: "0px 0px 8px 4px rgb(0, 0, 0, 0.3)"
           }}
         >
           <DataGrid
@@ -172,6 +174,7 @@ const Dashboard = () => {
            backgroundColor={theme.palette.background.alt}
            p="1.5rem"
            borderRadius="0.55rem"
+           boxShadow= "0px 0px 8px 4px rgb(0, 0, 0, 0.3)"
            >
           <Typography variant="h6" sx={{ color: theme.palette.secondary[100]}}>
             Sale by Category
